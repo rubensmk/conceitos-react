@@ -41,6 +41,7 @@ function validateProjectID(request, response, next){
 
 app.use(logRequests);
 app.use('/projects/:id', validateProjectID);
+
 //GET
 app.get('/projects', (request, response) => {
     const {title, owner} = request.query;
@@ -61,7 +62,7 @@ app.post('/projects', (request, response) => {
     const project = {id:uuid(), title, owner}
     projects.push(project);
 
-    return response.json(projects)
+    return response.json(project)
 });
 
 //PUT-PATCH

@@ -27,8 +27,11 @@ function App(){
         const project = response.data;
     
         setProjects([...projects, project]);
+
+        console.log(response.body);
       }    
-    
+
+      
 
     return (
         <>
@@ -37,7 +40,7 @@ function App(){
             <img width={200} src={backgroundImage}/>
 
             <ul>
-    {projects.map(project => <li key={project.id}> {project.title}</li>)}
+    {projects.map(project => (<li key={project.id}> {project.title}</li>))}
             </ul>
 
             <button type="button" onClick={handleAddProject}>Adicionar Projeto</button>
